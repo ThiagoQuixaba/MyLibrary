@@ -8,7 +8,7 @@ def Clean():
         os.system('cls')
 
 #Modulo:
-def Module(num):
+def Mod(num):
     try:
         if num < 0:
             return (num * -1)
