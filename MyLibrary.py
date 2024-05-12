@@ -199,4 +199,32 @@ def Triangle_Area_D(base, altura):
         return ((base * altura) / 2)
     except:
         return "3RR0R!"
-    
+
+#Converter Temperatura:
+def convert_temperature(temperature, current, objective):
+    try:
+        if current == "°C":
+            if objective == "°F":
+                return ((temperature / 5) * 9) + 32
+            elif objective == "K":
+                return temperature + 273.15
+            else:
+                return "3RR0R!"
+        elif current == "°F":
+            if objective == "°C":
+                return ((temperature - 32) / 9) * 5
+            elif objective == "K":
+                return (((temperature - 32) / 9) * 5) + 273.15
+            else:
+                return "3RR0R!"
+        elif current == "K":
+            if objective == "°C":
+                return temperature - 273.15
+            elif objective == "°F":
+                return (((temperature - 273.15) / 5) * 9) + 32
+            else:
+                return "3RR0R!"
+        else:
+            return "3RR0R!"
+    except:
+        return "3RR0R!"
