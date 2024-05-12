@@ -1,4 +1,3 @@
-print()
 #Limpar Terminal:
 def Clean():
     import os
