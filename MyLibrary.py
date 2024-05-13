@@ -228,3 +228,59 @@ def convert_temperature(temperature, current, objective):
             return "3RR0R!"
     except:
         return "3RR0R!"
+
+#Calcular Juros Compostos Usando Taxa Na Forma Decimal:
+def Interest_Denary(capital, tax, time):
+    try:
+        return capital * ((1 + tax) ** time)
+    except:
+        return "3RR0R!"
+
+#Calcular Juros Compostos Usando Taxa Na Forma De Porcentagem:
+def Interest_Percentage(capital, tax, time):
+    try:
+        return capital * ((1 + (tax / 100)) ** time)
+    except:
+        return "3RR0R!"
+
+#Validar CPF:
+def CPF(cpf):
+    cpf_digits = []
+    try:
+        for i in range(0, 11):
+            cpf_digits.append(int(cpf[i]))
+        if len(cpf_digits) != 11:
+            return False
+        else:
+            x1 = ((cpf_digits[0] * 10) + (cpf_digits[1] * 9) + (cpf_digits[2] * 8) + (cpf_digits[3] * 7) + (cpf_digits[4] * 6) + (cpf_digits[5] * 5) + (cpf_digits[6] * 4) + (cpf_digits[7] * 3) + (cpf_digits[8] * 2)) % 11
+            if x1 < 2:
+                d1 = 0
+            else:
+                d1 = 11 - x1
+            if cpf_digits[9] != d1:
+                return False
+            else:
+                x2 = ((cpf_digits[0] * 11) + (cpf_digits[1] * 10) + (cpf_digits[2] * 9) + (cpf_digits[3] * 8) + (cpf_digits[4] * 7) + (cpf_digits[5] * 6) + (cpf_digits[6] * 5) + (cpf_digits[7] * 4) + (cpf_digits[8] * 3) + (cpf_digits[9] * 2)) % 11
+                if x2 < 2:
+                    d2 = 0
+                else:
+                    d2 = 11 - x2
+                if cpf_digits[10] != d2:
+                    return False
+                else:
+                    return True
+    except:
+        return "3RR0R!"
+
+#Gerar Senha:
+def Generate_Key(length):
+    from random import randint
+    key = ''
+    try:
+        vetor = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', '{', ']', '}', '|', ';', ':', ',', '<', '.', '>', '/', '?', '~', '`']
+        for i in range(0, length):
+            char = vetor[randint(0, len(vetor) -1)]
+            key += char
+        return key
+    except:
+        return "3RR0R!"
