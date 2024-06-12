@@ -180,21 +180,21 @@ def Circle_Area_D(diameter):
         return "3RR0R!"
     
 #Area De Um Circulo Pela Circunferencia:
-def Circle_Area_D(Circumference):
+def Circle_Area_C(Circumference):
     try:
         return ((Circumference / (2 * 3.141592653589793)) ** 2)
     except:
         return "3RR0R!"
     
 #Area De Um Quadrado:
-def Square_Area_D(base, altura):
+def Square_Area(base, altura):
     try:
         return (base * altura)
     except:
         return "3RR0R!"
     
 #Area De Um Triangulo:
-def Triangle_Area_D(base, altura):
+def Triangle_Area(base, altura):
     try:
         return ((base * altura) / 2)
     except:
