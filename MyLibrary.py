@@ -13,7 +13,7 @@ class Verify:
         """This function checks if a variable is a number."""
 
         digits = ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".")
-        for i in var:
+        for i in str(var):
             if i not in digits:
                 return False
         return True
