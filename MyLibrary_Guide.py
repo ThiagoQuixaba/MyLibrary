@@ -126,4 +126,6 @@ print(MyLibrary.Interest.Percentage(capital, tax_percentage, time))  # Calculate
 
 # -Generate-Random-Key-Function-
 length = 10  # Length of the random key.
+char_list = ['a', 'b', 'c'] # Optional list of characters.
 print(MyLibrary.GenerateKey(length))  # Generates a random sequence of characters with the specified length.
+print(MyLibrary.GenerateKey(length, char_list))  # Generates a random sequence of characters with the specified length.
