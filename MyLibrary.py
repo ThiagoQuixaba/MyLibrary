@@ -9,7 +9,7 @@ def Clean():
 
 
 class Verify:
-    def Number(var=str): 
+    def Number(var: str): 
         """This function checks if a variable is a number."""
 
         digits = ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".")
@@ -19,7 +19,7 @@ class Verify:
         return True
 
     
-    def Pair(num=int): 
+    def Pair(num: int): 
         """This function checks if a number is even."""
 
         try:
@@ -31,7 +31,7 @@ class Verify:
             return 'ERROR!'
         
     
-    def Prime(num=int): 
+    def Prime(num: int): 
         """This function checks if a number is prime."""
 
         try:
@@ -81,7 +81,7 @@ class Verify:
 
 
 
-def Factorial(num=float):
+def Factorial(num: float):
     """This function calculates the factorial of a number."""
 
     try:
@@ -99,7 +99,7 @@ def Factorial(num=float):
         return 'ERROR!'
     
 
-def Root(rooting=float, index=float):
+def Root(rooting: float, index: float):
     """This function calculates the root of a number."""
 
     try:
@@ -118,7 +118,7 @@ def Root(rooting=float, index=float):
         return 'ERROR!'
 
 
-def Delta(a=float, b=float, c=float):
+def Delta(a: float, b: float, c: float):
     """This function calculates the delta of a quadratic equation. \n
     Formula: b² - 4.a.c"""
     try:
@@ -128,7 +128,7 @@ def Delta(a=float, b=float, c=float):
 
 
 class Bhaskara:
-    def NoDelta(a=float, b=float, c=float):
+    def NoDelta(a: float, b: float, c: float):
         """This function calculates the X of a quadratic equation along with the delta of that same quadratic equation. \n
         Formulas: (-b + √(b² - 4.a.c)) / (2.a) | (-b - √(b² - 4.a.c)) / (2.a)"""
 
@@ -144,7 +144,7 @@ class Bhaskara:
             return 'ERROR!'
 
 
-    def WithDelta(a=float, b=float, delta=float):
+    def WithDelta(a: float, b: float, delta: float):
         """This function calculates the X of a quadratic equation. \n
         Formulas: (-b + √Δ) / (2.a) | (-b - √Δ) / (2.a)"""
 
@@ -160,7 +160,7 @@ class Bhaskara:
 
 
 
-def Hypotenuse(cathetus1=float, cathetus2=float):
+def Hypotenuse(cathetus1: float, cathetus2: float):
     """This function calculates the hypotenuse of a right-angled triangle. \n
     Formula: √(Ca² + Cb²)"""
 
@@ -170,7 +170,7 @@ def Hypotenuse(cathetus1=float, cathetus2=float):
         return 'ERROR!'
     
 
-def Cathetus(hypotenuse=float, cathetus=float):
+def Cathetus(hypotenuse: float, cathetus: float):
     """This function calculates the cathetus of a right-angled triangle. \n 
     Formula: √(H² - C²)"""
 
@@ -181,7 +181,7 @@ def Cathetus(hypotenuse=float, cathetus=float):
     
 
 class Circumference:
-    def WithRadius(radius=float):
+    def WithRadius(radius: float):
         """This function calculates the circumference of a circle using its radius. \n
         Formula: 2.r.π"""
 
@@ -191,7 +191,7 @@ class Circumference:
             return 'ERROR!'
         
 
-    def Circumference_D(diameter=float):
+    def WithDiameter(diameter: float):
         """This function calculates the circumference of a circle using its diameter. \n
         Formula: d.π"""
 
@@ -204,7 +204,7 @@ class Circumference:
 
 class Area:
     class Circle:
-        def Radius(radius=float):
+        def Radius(radius: float):
             """This function calculates the area of a circle using its radius. \n
             Formula: r².π"""
 
@@ -214,7 +214,7 @@ class Area:
                 return 'ERROR!'
         
         
-        def Diameter(diameter=float):
+        def Diameter(diameter: float):
             """This function calculates the area of a circle using its diameter. \n
             Formula: (d/2)².π"""
 
@@ -224,7 +224,7 @@ class Area:
                 return 'ERROR!'
         
         
-        def Circumference(circumference=float): 
+        def Circumference(circumference: float): 
             """This function calculates the area of a circle using its circumference. \n
             Formula: Not Remembered"""
 
@@ -234,7 +234,7 @@ class Area:
                 return 'ERROR!'
 
 
-    def Square(base=float, height=float):
+    def Square(base: float, height: float):
         """This function calculates the area of a square. \n
         Formula: b.h"""
 
@@ -244,7 +244,7 @@ class Area:
             return 'ERROR!'
 
 
-    def Triangle(base=float, height=float):
+    def Triangle(base: float, height: float):
         """This function calculates the area of a triangle. \n
         Formula: (b.h) / 2"""
 
@@ -255,7 +255,7 @@ class Area:
 
 
 
-def ConvertTemperature(temperature=float, current_unit=str, target_unit=str):
+def ConvertTemperature(temperature: float, current_unit: str, target_unit: str):
     """This function converts temperature between °C, °F, or K. \n
         Formulas: \n 
         °C = ((°F - 32) / 9) * 5 | °C = K - 273.15 \n
@@ -297,7 +297,7 @@ def ConvertTemperature(temperature=float, current_unit=str, target_unit=str):
 
 
 class Interest:
-    def Denary(capital=float, tax=float, time=float):
+    def Denary(capital: float, tax: float, time: float):
         """This function calculates compound interest with the rate in decimal form. \n
         Formula: c.(1 + i)ᵗ"""
 
@@ -307,7 +307,7 @@ class Interest:
             return 'ERROR!'
 
     
-    def Percentage(capital=float, tax=float, time=float):
+    def Percentage(capital: float, tax: float, time: float):
         """This function calculates compound interest with the rate in percentage form. \n
         Formula: c.(1 + (i / 100))ᵗ"""
 
@@ -318,7 +318,7 @@ class Interest:
 
 
 
-def GenerateKey(length=int, char_list=None):
+def GenerateKey(length: int, char_list: list = None):
     """This function generates a random sequence of characters from a provided list or a default list, with a defined length. \n
         Default List: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', '{', ']', '}', '|', ';', ':', ',', '<', '.', '>', '/', '?', '~', '`']"""
     try:
