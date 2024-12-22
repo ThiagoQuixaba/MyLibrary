@@ -544,5 +544,7 @@ def RepeatUntil(action_code: str, condition_code: str):
     - action_code (str): Python code (as a string) to be executed repeatedly.
     - condition_code (str): Python code (as a string) that evaluates whether the repetition should stop.
     """
-    while not eval(condition_code):
+    while True:
         exec(action_code)
+        if eval(condition_code):
+            break
