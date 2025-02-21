@@ -76,30 +76,24 @@ class Verify:
         Returns:
         - bool: True if the CPF is valid, False otherwise.
         """
-        cpf_digits = []
+        from re import match
+        if not all(c.isdigit() or c in '.-' for c in cpf):
+            return False
+        if not (match(r'^\d{11}$', cpf) or match(r'^\d{3}\.\d{3}\.\d{3}-\d{2}$', cpf)):
+            return False
+        cpf = ''.join(filter(str.isdigit, cpf))
+        if len(cpf) != 11 or all(digit == cpf[0] for digit in cpf):
+            return False
         try:
-            for i in range(0, 11):
-                cpf_digits.append(int(cpf[i]))
-            if len(cpf_digits) != 11:
+            x1 = sum(int(cpf[i]) * (10 - i) for i in range(9))
+            d1 = 0 if x1 % 11 < 2 else 11 - (x1 % 11)
+            if int(cpf[9]) != d1:
                 return False
-            else:
-                x1 = ((cpf_digits[0] * 10) + (cpf_digits[1] * 9) + (cpf_digits[2] * 8) + (cpf_digits[3] * 7) + (cpf_digits[4] * 6) + (cpf_digits[5] * 5) + (cpf_digits[6] * 4) + (cpf_digits[7] * 3) + (cpf_digits[8] * 2)) % 11
-                if x1 < 2:
-                    d1 = 0
-                else:
-                    d1 = 11 - x1
-                if cpf_digits[9] != d1:
-                    return False
-                else:
-                    x2 = ((cpf_digits[0] * 11) + (cpf_digits[1] * 10) + (cpf_digits[2] * 9) + (cpf_digits[3] * 8) + (cpf_digits[4] * 7) + (cpf_digits[5] * 6) + (cpf_digits[6] * 5) + (cpf_digits[7] * 4) + (cpf_digits[8] * 3) + (cpf_digits[9] * 2)) % 11
-                    if x2 < 2:
-                        d2 = 0
-                    else:
-                        d2 = 11 - x2
-                    if cpf_digits[10] != d2:
-                        return False
-                    else:
-                        return True
+            x2 = sum(int(cpf[i]) * (11 - i) for i in range(10))
+            d2 = 0 if x2 % 11 < 2 else 11 - (x2 % 11)
+            if int(cpf[10]) != d2:
+                return False
+            return True
         except:
             return 'ERROR!'
 
