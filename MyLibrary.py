@@ -98,40 +98,40 @@ class Verify:
         except:
             return 'ERROR!'
         
-def PhoneNumber(phone: str) -> bool:
-    """
-    Checks if a phone number is valid based on various formats.
+    def PhoneNumber(phone: str) -> bool:
+        """
+        Checks if a phone number is valid based on various formats.
 
-    Parameters:
-    - phone (str): The phone number as a string.
+        Parameters:
+        - phone (str): The phone number as a string.
 
-    Returns:
-    - bool: True if the phone is valid, False otherwise.
-    """
-    from re import match
+        Returns:
+        - bool: True if the phone is valid, False otherwise.
+        """
+        from re import match
 
-    if not all(c.isdigit() or c in '+()- ' for c in phone):
+        if not all(c.isdigit() or c in '+()- ' for c in phone):
+            return False
+        formatos = [
+            r'^\+\d{2} \(\d{2}\) \d{5}-\d{4}$',
+            r'^\+\d{2} \(\d{2}\) \d{4}-\d{4}$',
+            r'^\+\d{2} \d{2} \d{5}-\d{4}$',
+            r'^\+\d{2} \d{2} \d{4}-\d{4}$',
+            r'^\d{2} \d{2} \d{5}-\d{4}$',
+            r'^\d{2} \d{2} \d{4}-\d{4}$',
+            r'^\+\d{2} \(\d{2}\) \d{9}$',
+            r'^\+\d{2} \(\d{2}\) \d{8}$',
+            r'^\+\d{2} \d{2} \d{9}$',
+            r'^\+\d{2} \d{2} \d{8}$',
+            r'^\d{2} \d{2} \d{9}$',
+            r'^\d{2} \d{2} \d{8}$',
+            r'^\d{13}$',
+            r'^\d{12}$',
+        ]
+        for formato in formatos:
+            if match(formato, phone):
+                return True
         return False
-    formatos = [
-        r'^\+\d{2} \(\d{2}\) \d{5}-\d{4}$',
-        r'^\+\d{2} \(\d{2}\) \d{4}-\d{4}$',
-        r'^\+\d{2} \d{2} \d{5}-\d{4}$',
-        r'^\+\d{2} \d{2} \d{4}-\d{4}$',
-        r'^\d{2} \d{2} \d{5}-\d{4}$',
-        r'^\d{2} \d{2} \d{4}-\d{4}$',
-        r'^\+\d{2} \(\d{2}\) \d{9}$',
-        r'^\+\d{2} \(\d{2}\) \d{8}$',
-        r'^\+\d{2} \d{2} \d{9}$',
-        r'^\+\d{2} \d{2} \d{8}$',
-        r'^\d{2} \d{2} \d{9}$',
-        r'^\d{2} \d{2} \d{8}$',
-        r'^\d{13}$',
-        r'^\d{12}$',
-    ]
-    for formato in formatos:
-        if match(formato, phone):
-            return True
-    return False
 
 
 
