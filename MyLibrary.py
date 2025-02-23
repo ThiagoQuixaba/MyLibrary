@@ -66,17 +66,18 @@ class Verify:
         except:
             return 'ERROR!'
 
-    def CPF(cpf):
+    def CPF(cpf: str):
         """
         Checks if an eleven-digit sequence is a valid CPF.
 
         Parameters:
-        - cpf (str): The CPF number as a string.
+        - CPF (str): The CPF number as a string (000.000.000-00).
 
         Returns:
         - bool: True if the CPF is valid, False otherwise.
         """
         from re import match
+        
         if not all(c.isdigit() or c in '.-' for c in cpf):
             return False
         if not (match(r'^\d{11}$', cpf) or match(r'^\d{3}\.\d{3}\.\d{3}-\d{2}$', cpf)):
@@ -96,31 +97,66 @@ class Verify:
             return True
         except:
             return 'ERROR!'
+        
+def PhoneNumber(phone: str) -> bool:
+    """
+    Checks if a phone number is valid based on various formats.
+
+    Parameters:
+    - phone (str): The phone number as a string.
+
+    Returns:
+    - bool: True if the phone is valid, False otherwise.
+    """
+    from re import match
+
+    if not all(c.isdigit() or c in '+()- ' for c in phone):
+        return False
+    formatos = [
+        r'^\+\d{2} \(\d{2}\) \d{5}-\d{4}$',
+        r'^\+\d{2} \(\d{2}\) \d{4}-\d{4}$',
+        r'^\+\d{2} \d{2} \d{5}-\d{4}$',
+        r'^\+\d{2} \d{2} \d{4}-\d{4}$',
+        r'^\d{2} \d{2} \d{5}-\d{4}$',
+        r'^\d{2} \d{2} \d{4}-\d{4}$',
+        r'^\+\d{2} \(\d{2}\) \d{9}$',
+        r'^\+\d{2} \(\d{2}\) \d{8}$',
+        r'^\+\d{2} \d{2} \d{9}$',
+        r'^\+\d{2} \d{2} \d{8}$',
+        r'^\d{2} \d{2} \d{9}$',
+        r'^\d{2} \d{2} \d{8}$',
+        r'^\d{13}$',
+        r'^\d{12}$',
+    ]
+    for formato in formatos:
+        if match(formato, phone):
+            return True
+    return False
 
 
 
-def Factorial(num: float):
+def Factorial(num: any):
     """
     Calculates the factorial of a number.
 
     Parameters:
-    - num (float): The number for which the factorial will be calculated. Must be non-negative and an integer.
+    - num (float, int, or str): The number for which the factorial will be calculated. Must be non-negative and an integer.
 
     Returns:
     - int: The factorial of the number.
     - str: 'ERROR!' if the input is invalid.
     """
     try:
-        if (not isinstance(num, int) and not num.is_integer()) or num < 0:
+        if isinstance(num, str):
+            num = float(num)
+        if not isinstance(num, (int, float)) or num < 0 or (isinstance(num, float) and not num.is_integer()):
             return 'ERROR!'
-        elif num == 0:
-            return 1
-        else:
-            num = int(num)
-            result = 1
-            for i in range(num, 0, -1):
-                result *= i
-            return result
+        num = int(num)
+        result = 1
+        for i in range(1, num + 1):
+            result *= i
+        
+        return result
     except:
         return 'ERROR!'
 
