@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mylibrary"
-version = "1.0.0"
+version = "1.0.1"
 description = "Uma biblioteca pessoal com funções matemáticas, estéticas, utilitárias e de verificação."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -15,4 +15,4 @@ requires-python = ">=3.12.6"
 
 # Exemplo de onde estão os pacotes Python
 [tool.setuptools.packages.find]
-where = ["mylibrary"]
+where = ["."]
