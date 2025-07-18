@@ -12,7 +12,7 @@ Com pip diretamente do GitHub:
 
 ```bash
 pip install git+https://github.com/ThiagoQuixaba/MyLibrary.git
-
+```
 
 ## Categorias
 
