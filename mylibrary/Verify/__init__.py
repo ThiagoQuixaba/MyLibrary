@@ -1,0 +1,1 @@
+from .verify import Number, Pair, Prime, CPF, PhoneNumber
