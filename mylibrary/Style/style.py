@@ -1,3 +1,17 @@
+def Clean():
+    """
+    Clears the terminal.
+
+    Parameters:
+    - None
+    """
+    from os import name, system
+    os_system = name
+    if os_system == 'posix': 
+        system('clear')
+    elif os_system == 'nt':  
+        system('cls')
+
 def Write(phrase: str, timing: float = 0.1):
     """
     Write a phrase in the console with a delay between each character.

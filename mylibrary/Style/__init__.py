@@ -1,1 +1,1 @@
-from .style import Write
+from .style import Clean, Write

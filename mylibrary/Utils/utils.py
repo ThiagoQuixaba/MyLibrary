@@ -1,17 +1,3 @@
-def Clean():
-    """
-    Clears the terminal.
-
-    Parameters:
-    - None
-    """
-    from os import name, system
-    os_system = name
-    if os_system == 'posix': 
-        system('clear')
-    elif os_system == 'nt':  
-        system('cls')
-
 def GenerateKey(length: int, char_list: list = None):
     """
     This function generates a random sequence of characters from a provided list or a default list, with a defined length.
