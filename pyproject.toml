@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mylibrary"
+version = "1.0.0"
+description = "Uma biblioteca pessoal com funções matemáticas, estéticas, utilitárias e de verificação."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name="Thiago Quixaba Campos de Macedo", email="thiagoquixaba78@gmail.com" }
+]
+requires-python = ">=3.12.6"
+
+# Exemplo de onde estão os pacotes Python
+[tool.setuptools.packages.find]
+where = ["mylibrary"]
