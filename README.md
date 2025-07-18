@@ -55,6 +55,6 @@ Este projeto está licenciado sob a MIT License.
 
 
 ## ✍️ Autor
-Feito por Thiago Quixaba Campos de Macedo.
-Contato: thiagoquixaba78@gmail.com
+Feito por Thiago Quixaba Campos de Macedo.  
+Contato: thiagoquixaba78@gmail.com  
 GitHub: https://github.com/ThiagoQuixaba/MyLibrary
