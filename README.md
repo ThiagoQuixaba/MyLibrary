@@ -8,9 +8,18 @@ pessoais ou protótipos.
 
 ## 📦 Instalação
 
-Você pode instalar a biblioteca diretamente do GitHub usando o pip:
+Com pip diretamente do GitHub:
 
+```bash
 pip install git+https://github.com/ThiagoQuixaba/MyLibrary.git
+
+
+## Categorias
+
+- `Math`: Funções matemáticas
+- `Utils`: Funções utilitárias
+- `Verify`: Verificações e validações
+- `Style`: Estilização de strings
 
 
 ## 🧠 Funcionalidades
